@@ -11,8 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Task extends BaseEntity {
+public class Permiso extends EntidadBase {
 
-	private String name;
-	private String description;
+	private String descPermiso;
 }

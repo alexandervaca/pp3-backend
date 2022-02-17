@@ -8,13 +8,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import ar.com.ifts.app.model.Categoria;
 
-//@Repository
-public interface CategoriaRepository extends CrudRepository<Categoria, Long> {
+public interface CategoriaRepository extends CrudRepository<Categoria, String> {
 	
-	public Optional<Categoria> findByIdCategoria(Long idCategoria);
-	
-	public Optional<Categoria> findByDescCategoria(String descCategoria);
-	
+//	public Optional<Categoria> findByIdCategoria(Long idCategoria);
+//	
+//	public Optional<Categoria> findByDescCategoria(String descCategoria);
+//	
 	public List<Categoria> findAll();
 	
 }

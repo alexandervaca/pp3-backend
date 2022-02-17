@@ -17,7 +17,7 @@ import ar.com.ifts.app.model.output.GetUsuariosResponse;
 
 //@RestController
 //@RequestMapping(value = "/api")
-public class AdministradoresController extends UsuariosController{
+public class AdministradoresController extends UsuariosController {
 	
 //	@PreAuthorize("hasRole('ROLE_ADMIN')")
 //	@GetMapping(value = "/administradores", produces = APPLICATION_JSON_VALUE)

@@ -1,13 +1,10 @@
 package ar.com.ifts.app.repository;
 
-import org.springframework.data.repository.CrudRepository;
-//import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-//import ar.com.ifts.app.model.Permiso;
+import ar.com.ifts.app.model.Permiso;
 
-//@Repository
-public interface PermisoRepository {//extends CrudRepository<Permiso, Long>{
+public interface PermisoRepository extends MongoRepository<Permiso, String> {
 	
-//	public Permiso findByDescPermiso(String descPermiso);
-	
+	public Permiso findByDescPermiso(String descPermiso);
 }

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Document
-public class BaseEntity {
+public class EntidadBase {
 	@Id
 	private String id;
 }

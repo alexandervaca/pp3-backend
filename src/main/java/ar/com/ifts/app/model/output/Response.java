@@ -2,30 +2,20 @@ package ar.com.ifts.app.model.output;
 
 import java.time.LocalDate;
 
-public class Response implements IResponse {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@SuperBuilder
+public class Response {
+	
 	private String status;
 	private String code;
 	private LocalDate date;
-
-	public Response(String status, String code, LocalDate date) {
-		this.status = status;
-		this.code = code;
-		this.date = date;
-	}
-
-	@Override
-	public String getStatus() {
-		return status;
-	}
-
-	@Override
-	public String getCode() {
-		return code;
-	}
-
-	@Override
-	public LocalDate getDate() {
-		return date;
-	}
-
 }

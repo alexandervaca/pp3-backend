@@ -11,7 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Categoria extends EntidadBase {
+public class Tarea extends EntidadBase {
 
-	private String descCategoria;
+	private String nombre;
+	private String descripcion;
 }

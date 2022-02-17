@@ -38,7 +38,7 @@ public class JwtRequestFilter {//extends OncePerRequestFilter {
 //				String username = jwtService.getUsernameFromToken(requestToken);
 //				UserDetails userDetails = this.userDetailService.loadUserByUsername(username);
 //				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-//						userDetails.getUsername(), null, userDetails.getAuthorities());
+//					userDetails.getUsername(), null, userDetails.getAuthorities());
 //				SecurityContextHolder.getContext().setAuthentication(auth);
 //			} else {
 //				SecurityContextHolder.clearContext();

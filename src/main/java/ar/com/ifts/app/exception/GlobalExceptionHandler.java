@@ -58,12 +58,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return this.globleExcpetionHandlerReturn(errorDetails, INTERNAL_SERVER_ERROR);
 	}
 
-	@ExceptionHandler(ProductosServiceException.class)
-	public ResponseEntity<?> productosServiceExceptionHandler(ProductosServiceException ex, WebRequest request) {
-		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
-		return this.globleExcpetionHandlerReturn(errorDetails, INTERNAL_SERVER_ERROR);
-	}
-
 	@ExceptionHandler(CompraServiceException.class)
 	public ResponseEntity<?> compraServiceExceptionHandler(CompraServiceException ex, WebRequest request) {
 		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));

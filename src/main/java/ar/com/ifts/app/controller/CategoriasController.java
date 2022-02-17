@@ -22,8 +22,8 @@ public class CategoriasController {
 	private CategoriasService categoriasService;
 
 //	@GetMapping(value = "/categorias", produces = APPLICATION_JSON_VALUE)
-//	public ResponseEntity<GetCategoriasResponse> obtenerCategorias() {
-//		return ResponseEntity.ok(new GetCategoriasResponse("Consulta de categorias exitosa.", String.valueOf(OK.ordinal()),
-//				LocalDate.now(), categoriasService.getCategorias()));
-//	}
+	public ResponseEntity<GetCategoriasResponse> obtenerCategorias() {
+		return ResponseEntity.ok(new GetCategoriasResponse("Consulta de categorias exitosa.", String.valueOf(OK.ordinal()),
+				LocalDate.now(), categoriasService.getCategorias()));
+	}
 }

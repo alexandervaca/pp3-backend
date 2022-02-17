@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ar.com.ifts.app.model.Usuario;
 import ar.com.ifts.app.model.output.dto.UsuarioBuilder;
 import ar.com.ifts.app.model.output.dto.UsuarioDto;
-import ar.com.ifts.app.services.UsuariosService;
+import ar.com.ifts.app.services.UsuarioService;
 
 public class UsuariosController {
 
 //	@Autowired
-	UsuariosService usuariosService;
+	UsuarioService usuariosService;
 
 	public UsuarioDto buildUsuarioResponse(Usuario usuario) {
 		return new UsuarioBuilder().setUsuario(usuario).build();

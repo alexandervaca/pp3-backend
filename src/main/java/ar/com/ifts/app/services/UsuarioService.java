@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 
@@ -18,20 +21,20 @@ import ar.com.ifts.app.repository.CategoriaRepository;
 import ar.com.ifts.app.repository.PermisoRepository;
 import ar.com.ifts.app.repository.UsuarioRepository;
 
-//@Service
-public class UsuariosService {
+@Service
+public class UsuarioService {
 
-//	@Autowired
+	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-//	@Autowired
+	@Autowired
 	private PermisoRepository permisoRepository;
 
 //	@Autowired
 	private CategoriaRepository categoriaRepository;
 
-//	@Autowired
-//	private JwtService jwtService;
+	@Autowired
+	private JwtService jwtService;
 
 //	public List<Usuario> getProveedoresByCategoria(Long idCategoria) throws UsuarioServiceException {
 //		Permiso permiso = permisoRepository.findByDescPermiso(PermisosEnum.PROVEEDOR.getRole());
@@ -48,25 +51,24 @@ public class UsuariosService {
 //	public List<Usuario> getClientes() {
 //		return this.getUsuariosByPermiso(PermisosEnum.CLIENTE.getRole());
 //	}
-//
-//	public List<Usuario> getAdministradores() {
-//		return this.getUsuariosByPermiso(PermisosEnum.ADMIN.getRole());
-//	}
-//
+
+	public List<Usuario> getAdministradores() {
+		return this.getUsuariosByPermiso(PermisosEnum.ADMIN.getRole());
+	}
+
 //	public List<Usuario> getAllUsuarios(HttpServletRequest http) {
 //		String username = jwtService.getUsernameFromToken((String) http.getHeader("Authorization"));
 //		return this.usuarioRepository.findAll().stream().filter(elem -> !elem.getUsername().equals(username))
 //				.collect(Collectors.toList());
 //	}
 //
-//	public Usuario getUsuario(HttpServletRequest http) throws UsuarioServiceException {
-//		String username = jwtService.getUsernameFromToken((String) http.getHeader("Authorization"));
-//		return usuarioRepository.findByUsername(username)
-//				.orElseThrow(() -> new UsuarioServiceException("Usuario inexistente."));
-//	}
-//
-//	public List<Usuario> getUsuariosByPermiso(String role) {
-		//return usuarioRepository.findByPermiso(permisoRepository.findByDescPermiso(role));
-//		return null;
-//	}
+	public Usuario getUsuario(HttpServletRequest http) throws UsuarioServiceException {
+		String username = jwtService.getUsernameFromToken((String) http.getHeader("Authorization"));
+		return usuarioRepository.findByUsername(username)
+				.orElseThrow(() -> new UsuarioServiceException("Usuario inexistente."));
+	}
+
+	public List<Usuario> getUsuariosByPermiso(String rol) {
+		return usuarioRepository.findByPermiso(permisoRepository.findByDescPermiso(rol));
+	}
 }
